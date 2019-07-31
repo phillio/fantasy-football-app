@@ -1,9 +1,8 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
 
-function TeamSelectButton(props) {
+function TeamSelectButton() {
     return(
-        <option value={props.teamId}>{props.teamName}</option>
+        <p>team</p>
     )
 }
 

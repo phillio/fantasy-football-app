@@ -1,0 +1,8 @@
+.nfc {
+    display: flex;
+    flex-direction: row;
+}
+.afc {
+    display: flex;
+    flex-direction: row;
+}

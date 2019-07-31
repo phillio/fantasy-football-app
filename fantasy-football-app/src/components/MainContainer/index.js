@@ -1,15 +1,10 @@
 import React from 'react';
 import axios from 'axios';
-import { Link, Route } from 'react-router-dom';
 
 import TeamSelect from '../TeamSelect';
 import Header from '../Header';
 
 const apiKey = process.env.REACT_APP_API_TOKEN
-
-
-
-
 
 class MainContainer extends React.Component {
     constructor() {
@@ -52,18 +47,6 @@ class MainContainer extends React.Component {
                     return player
                 }
             })
-            // const allTeams = activePlayers.map(player => {
-            //     // console.log(player.name)
-            //     let teams = {
-            //         team: player.team
-            //     }
-            //     return teams
-            // })
-
-            // const uniqueTeams = new Set(allTeams)
-            // const backToAllTeams = [...uniqueTeams]
-
-            // console.log(backToAllTeams)
             this.setState({activePlayers})
 
         } catch (error) {
@@ -77,7 +60,6 @@ class MainContainer extends React.Component {
             <div>
                 <Header />
                 <TeamSelect />
-                {/* <Route path="/roster" render={Roster} /> */}
             </div>
         );
     }
