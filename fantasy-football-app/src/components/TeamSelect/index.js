@@ -1,7 +1,8 @@
 import React from 'react';
 import './TeamSelect.css';
-
+import { Link, Route } from 'react-router-dom';
 import TeamSelectButton from '../TeamSelectButton';
+import Roster from '../Roster';
 
 const teamsObjects = [
     {teamId: 1, teamName: 'Arizona Cardinals'},
@@ -63,8 +64,13 @@ class TeamSelect extends React.Component {
   }
 
   handleSubmit = e => {
-    alert(this.state.value)
     e.preventDefault();
+    // return (
+    //   <Route
+    //     path="/roster"
+    //     render={Roster}
+    //   />
+    // )
   }
 
   // renderTeamList = () => {
@@ -92,7 +98,10 @@ class TeamSelect extends React.Component {
                 <select value={this.state.teamName} onChange={this.handleChange}>
                 {/* {this.renderTeamId()} */}
                 {teamsObjects.map(team => {
-                  return  <TeamSelectButton teamName={team.teamName} />
+                  return  <TeamSelectButton 
+                            key={team.teamId} 
+                            teamId={team.teamId} 
+                            teamName={team.teamName} />
                 })}
                 </select>
             </label>
