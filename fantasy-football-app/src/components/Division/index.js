@@ -24,11 +24,10 @@ function Division(props) {
             <h3>{props.divName}</h3>
             <ul>
                 {teamIndexChart.map((item,index)=>{
-                    console.log(item)
                         return (
                             <Team 
                             key={item.teamId}
-                            divsion={item.divsion}
+                            division={item.division}
                             conference={item.conference}
                             // activePlayers={props.activePlayers}
                             // teamIndexChart={item.teamIndexChart}

@@ -17,7 +17,7 @@ class MainContainer extends React.Component {
     }
 
     componentDidMount = () => {
-        this.fetchData()
+        // this.fetchData()
     }
 
     fetchData = async () => {
