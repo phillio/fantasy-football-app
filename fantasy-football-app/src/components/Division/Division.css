@@ -1,15 +1,6 @@
-.nfc-north, .nfc-east, .nfc-west, .nfc-south {
+.division {
     display: flex;
     flex-direction: column;
-    margin: 0 20px;
-}
+    margin: 20px;
 
-.afc-north, .afc-east, .afc-west, .afc-south {
-    display: flex;
-    flex-direction: column;
-    margin: 0 20px;
-}
-
-p {
-    margin: 5px 0;
 }

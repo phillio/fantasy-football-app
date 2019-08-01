@@ -1,8 +1,10 @@
 import React from 'react';
 import axios from 'axios';
+import { Link, Route } from 'react-router-dom';
 
 import TeamSelect from '../TeamSelect';
 import Header from '../Header';
+import Roster from '../Roster';
 
 const apiKey = process.env.REACT_APP_API_TOKEN
 
@@ -12,12 +14,19 @@ class MainContainer extends React.Component {
 
         this.state = {
             activePlayers: [],
-            teams:[]
+            teams:[],
+            clickValue: []
         }
     }
 
     componentDidMount = () => {
-        // this.fetchData()
+        this.fetchData()
+    }
+
+    handleClick = (e) => {
+        let clickValue = e.target.value
+        this.setState({clickValue})
+        alert(clickValue)
     }
 
     fetchData = async () => {
@@ -29,11 +38,20 @@ class MainContainer extends React.Component {
                 let data = {
                     id: player.PlayerID,
                     name: `${player.FirstName} ${player.LastName}`,
+                    number: player.Number,
                     status: player.Status,
+                    positionCategory: player.PositionCategory,
                     position: player.Position,
                     team: player.Team,
                     teamId: player.TeamID,
                     photoUrl: player.PhotoUrl,
+                    experience: player.Experience,
+                    college: player.College,
+                    height: player.Height,
+                    weight: player.Weight,
+                    fantasyDraftRank: player.AverageDraftPosition,
+                    injuryStatus: player.InjuryStatus
+
                 }
                 return data
             })
@@ -57,9 +75,15 @@ class MainContainer extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="main-container">
                 <Header />
-                <TeamSelect />
+                <Link to="/">Back</Link>
+                <TeamSelect 
+                    activePlayers={this.state.activePlayers}
+                />
+                <Route path="/" />
+                <Route path="/:roster" render={Roster} />
+                
             </div>
         );
     }

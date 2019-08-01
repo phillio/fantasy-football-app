@@ -52,8 +52,9 @@ class TeamSelect extends React.Component {
     this.state = {
       nfc: [],
       afc: [],
+      nfcName: ['nfc'],
+      afcName: ['afc'],
       teamIndexChart: teamsObjects,
-      activePlayers: props.activePlayers
     };
   }
 
@@ -61,52 +62,35 @@ class TeamSelect extends React.Component {
     this.filterByConference()
   }
 
-  filterByConference = () => {
-    //  this.state.teamIndexChart.map(item => {
-    //   console.log(item.conference)
-    //   if (item.conference === 'nfc') {
-    //     this.setState({ nfc: item})
-    //   } else if (item.conference === 'afc') {
-    //     this.setState({afc: [...this.state.afc, item]})
-    //   }
-    // })
-
-    const nfc = this.state.teamIndexChart.filter(conference => {
+  filterByConference = async () => {
+    const nfc = await this.state.teamIndexChart.filter(conference => {
       if(conference.conference=== 'nfc'){
         return conference
       }
     })
-    const afc = this.state.teamIndexChart.filter(conference => {
+    const afc = await this.state.teamIndexChart.filter(conference => {
       if(conference.conference=== 'afc'){
         return conference
       }
     })
     this.setState({nfc, afc})
+    // this.setState({nfc: nfc, afc: afc})
   }
 
   render() {
+    // console.log(this.state.nfc)
+
+    // console.log(this.state.afc)
+    // console.log(this.props.activePlayers)
     return(
-      <div>
-        {this.state.nfc.map(item => {
-          return(
-            <Conference 
-              key={item.teamId}
-              teamIndexChart={this.state.teamIndexChart}
-              activePlayers={this.state.activePlayers}
-              division={item.division}
-            />
-          )
-        })}
-        {this.state.afc.map(item => {
-          return(
-            <Conference 
-              key={item.teamId}
-              teamIndexChart={this.state.teamIndexChart}
-              activePlayers={this.state.activePlayers}
-              division={item.division}
-            />
-          )
-        })}
+      <div className="conference-holder">
+        <Conference 
+          nfcName={this.state.nfcName}
+          nfc={this.state.nfc} 
+          afcName={this.state.afcName}
+          afc={this.state.afc} 
+          activePlayers={this.props.activePlayers}
+          />
       </div>
     )
   }
@@ -114,6 +98,33 @@ class TeamSelect extends React.Component {
 
 export default TeamSelect
 
+
+{/* <div className="nfc-container">
+          {this.state.nfcName.map(item => {
+            return(
+              <Conference 
+                key={item.teamId}
+                name={this.state.nfcName}
+                teamIndexChart={this.state.teamIndexChart}
+                activePlayers={this.state.activePlayers}
+                division={item.division}
+              />
+            )
+          })}
+        </div>
+        <div className="nfc-container">
+          {this.state.afcName.map(item => {
+            return(
+              <Conference 
+                key={item.teamId}
+                name={this.state.afcName}
+                teamIndexChart={this.state.teamIndexChart}
+                activePlayers={this.state.activePlayers}
+                division={item.division}
+              />
+            )
+          })}
+        </div> */}
 
 
 // <div className="conference-container">

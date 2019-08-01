@@ -1,0 +1,11 @@
+.roster-container {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+.qb-container, .rb-container, .wr-container, .te-container, .k-container {
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+}

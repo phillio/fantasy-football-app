@@ -2,55 +2,29 @@ import React from 'react';
 import './Division.css';
 import Team from '../Team';
 
-function Division(props) {
-    // console.log(props.confName)
-    // console.log(`${props.confName}-${props.name}`)
-    // console.log(props.teamIndexChart)
-
-    // const findDivisionalTeam2 = () => {
-    //     let teamIndexChart = props.teamIndexChart
-    //     const {teamId, teamName, division, conference} = teamIndexChart
-    //     console.log(teamId)
-    //     console.log(teamName)
-    //     console.log(division)
-    //     console.log(conference)
-    // }
-    // findDivisionalTeam2()
-
-
-    let teamIndexChart = props.teamIndexChart
-    return (
-        <div className={`${props.conference}-${props.divName}`}>
-            <h3>{props.divName}</h3>
-            <ul>
-                {teamIndexChart.map((item,index)=>{
-                        return (
-                            <Team 
-                            key={item.teamId}
-                            division={item.division}
-                            conference={item.conference}
-                            // activePlayers={props.activePlayers}
-                            // teamIndexChart={item.teamIndexChart}
-                        />
-                        )
+class Division extends React.Component {
+    render() {
+        const div = this.props.div
+        // console.log('DIVISION THIS.PROPS', this.props.div)
+        return (
+            <div className="division-container">
+                <ul className={`${this.props.confName}-${this.props.divName}`}>{this.props.divName}
+                    {
+                        div.map((item,index)=>{
+                            return(
+                                <Team 
+                                    key={item.teamId}
+                                    teamId={item.teamId}
+                                    teamName={item.teamName}
+                                    activePlayers={this.props.activePlayers}
+                                />
+                            )
+                        })
                     }
-                )}
-
-                {/* {teamIndexChart.map((item,index)=>{
-                    return(
-                        <Team 
-                            key={index}
-                            name={props.name}
-                            conference={props.conference}
-                            activePlayers={props.activePlayers}
-                            teamIndexChart={props.teamIndexChart}
-                        />
-                    )
-
-                })} */}
-            </ul>
-        </div>
+                </ul>
+            </div>
     )
+    }
 }
 
 export default Division

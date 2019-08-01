@@ -1,8 +1,4 @@
-.nfc {
-    display: flex;
-    flex-direction: row;
-}
-.afc {
+.division-holder {
     display: flex;
     flex-direction: row;
 }
