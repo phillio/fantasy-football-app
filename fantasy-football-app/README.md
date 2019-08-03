@@ -9,6 +9,7 @@ Keep track of your players as they earn you points during the game!
 See each team's rosters that matter for fantasy football (QB, RB, WR, TE, K).
 
 Click on a team to see their players!
-![NFL Rosters](./pictures//readmepic.png)
+
+![NFL Rosters](https://raw.githubusercontent.com/phillio/fantasy-football-app/master/fantasy-football-app/src/pictures/readmepic.png)
 
 **Built on HTML, CSS, Javascript, and React**
