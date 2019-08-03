@@ -1,4 +1,26 @@
-.division-holder {
+
+.conference-container {
     display: flex;
     flex-direction: row;
+    overflow: auto;
+}
+
+.nfc-container, .afc-container {
+    display: flex;
+    flex-direction: row;
+    min-width: 50vw;
+    position: relative;
+}
+
+#nfc {
+    color: blue;
+}
+
+#afc {
+    color: #D50A0A;
+}
+
+.division-holder {
+    display: flex;
+    min-width: 40vw;
 }

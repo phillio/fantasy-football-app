@@ -1,6 +1,17 @@
-.division {
+.division-container {
     display: flex;
     flex-direction: column;
-    margin: 20px;
+    overflow: auto;
+    background-image: url()
 
+}
+
+.nfc-north, .nfc-east, .nfc-west, .nfc-south, .afc-north, .afc-east, .afc-west, .afc-south {
+    margin: 5px;
+    padding: 0;
+    color: #133669;
+    text-transform: capitalize;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: inset 100vh 100vh 100px 100px rgba(176, 175, 175, 0.36);
 }

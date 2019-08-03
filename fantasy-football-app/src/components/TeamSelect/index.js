@@ -74,14 +74,9 @@ class TeamSelect extends React.Component {
       }
     })
     this.setState({nfc, afc})
-    // this.setState({nfc: nfc, afc: afc})
   }
 
   render() {
-    // console.log(this.state.nfc)
-
-    // console.log(this.state.afc)
-    // console.log(this.props.activePlayers)
     return(
       <div className="conference-holder">
         <Conference 
@@ -97,88 +92,3 @@ class TeamSelect extends React.Component {
 }
 
 export default TeamSelect
-
-
-{/* <div className="nfc-container">
-          {this.state.nfcName.map(item => {
-            return(
-              <Conference 
-                key={item.teamId}
-                name={this.state.nfcName}
-                teamIndexChart={this.state.teamIndexChart}
-                activePlayers={this.state.activePlayers}
-                division={item.division}
-              />
-            )
-          })}
-        </div>
-        <div className="nfc-container">
-          {this.state.afcName.map(item => {
-            return(
-              <Conference 
-                key={item.teamId}
-                name={this.state.afcName}
-                teamIndexChart={this.state.teamIndexChart}
-                activePlayers={this.state.activePlayers}
-                division={item.division}
-              />
-            )
-          })}
-        </div> */}
-
-
-// <div className="conference-container">
-//         <div className="nfc-container">
-//           <ul className="nfc-north">nfc-north
-//             <li>team1</li>
-//             <li>team2</li>
-//             <li>team3</li>
-//             <li>team4</li>
-//           </ul>
-//           <ul className="nfc-east">nfc-east
-//             <li>team1</li>
-//             <li>team2</li>
-//             <li>team3</li>
-//             <li>team4</li>
-//           </ul>
-//           <ul className="nfc-west">nfc-west
-//             <li>team1</li>
-//             <li>team2</li>
-//             <li>team3</li>
-//             <li>team4</li>
-//           </ul>
-//           <ul className="nfc-south">nfc-south
-//             <li>team1</li>
-//             <li>team2</li>
-//             <li>team3</li>
-//             <li>team4</li>
-//           </ul>
-//         </div>
-//         <div className="afc-container">
-//           <ul className="afc-north">afc-north
-//             <li>team1</li>
-//             <li>team2</li>
-//             <li>team3</li>
-//             <li>team4</li>
-//           </ul>
-//           <ul className="afc-east">afc-east
-//             <li>team1</li>
-//             <li>team2</li>
-//             <li>team3</li>
-//             <li>team4</li>
-//           </ul>
-//           <ul className="afc-west">afc-west
-//             <li>team1</li>
-//             <li>team2</li>
-//             <li>team3</li>
-//             <li>team4</li>
-//           </ul>
-//           <ul className="afc-south">afc-south
-//             <li>team1</li>
-//             <li>team2</li>
-//             <li>team3</li>
-//             <li>team4</li>
-//           </ul>
-//         </div>
-//       </div>
-        

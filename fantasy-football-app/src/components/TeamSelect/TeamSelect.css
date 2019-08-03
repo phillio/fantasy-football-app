@@ -1,4 +1,3 @@
 .conference-holder {
-    display: flex;
-    flex-direction: column;
+    overflow: auto;
 }

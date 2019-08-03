@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import './Team.css';
 
 function Team(props) {
-    // console.log(props.teamId)
-
     let rosterTeam
     let findRoster = props.activePlayers.filter(player => {
         if (player.teamId === props.teamId) {
@@ -11,7 +10,6 @@ function Team(props) {
         }
     })
     rosterTeam = findRoster
-    // console.log(rosterTeam)
     return (
         <Link 
             to={{pathname:`/${props.teamId}`, 
@@ -21,7 +19,8 @@ function Team(props) {
                 teamName: props.teamName,
                 activePlayers: props.activePlayers
                 }}} 
-        ><li>{props.teamName}</li></Link>
+                >
+        <li className="team-list">{props.teamName}</li></Link>
     )
 }
 

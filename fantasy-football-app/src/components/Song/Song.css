@@ -1,0 +1,13 @@
+.theme-song{
+    display: flex;
+    width: 100vw;
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+}
+
+iframe {
+    display: flex;
+    width: 60vw;
+    height: 60vh;
+}

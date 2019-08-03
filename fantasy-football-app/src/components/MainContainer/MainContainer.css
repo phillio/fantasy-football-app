@@ -1,0 +1,29 @@
+.main-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.header-container {
+    display: flex;
+    width: 100vw;
+    flex-direction: row;
+}
+
+.pic-container {
+    background-image: url('../../pictures/background.jpg');
+    box-shadow: inset 100vh 100vh 100px 100px rgba(76, 81, 87, 0.36);
+    background-size: 100%;
+    background-position: bottom;
+    background-repeat: cover;
+    width: auto;
+    height: 90vh;
+    overflow: auto;
+}
+
+.roster-song-path-holder {
+    display: flex;
+    width: 100vw;
+}

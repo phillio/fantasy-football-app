@@ -1,10 +1,13 @@
 import React from 'react';
 import axios from 'axios';
-import { Link, Route } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 
 import TeamSelect from '../TeamSelect';
 import Header from '../Header';
 import Roster from '../Roster';
+import Song from '../Song';
+
+import './MainContainer.css';
 
 const apiKey = process.env.REACT_APP_API_TOKEN
 
@@ -76,14 +79,20 @@ class MainContainer extends React.Component {
     render() {
         return (
             <div className="main-container">
-                <Header />
-                <Link to="/">Back</Link>
-                <TeamSelect 
-                    activePlayers={this.state.activePlayers}
-                />
-                <Route path="/" />
-                <Route path="/:roster" render={Roster} />
-                
+                <div className="header-container">
+                    <Header />
+                </div>
+                <div className="pic-container">
+                    <TeamSelect 
+                        activePlayers={this.state.activePlayers}
+                    />
+                    <div className="roster-song-path-holder">
+                        <Switch>
+                            <Route exact path="/" component={Song}/>
+                            <Route path="/:roster" render={Roster} />
+                        </Switch>
+                    </div>
+                </div>
             </div>
         );
     }

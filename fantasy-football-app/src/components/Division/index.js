@@ -5,7 +5,6 @@ import Team from '../Team';
 class Division extends React.Component {
     render() {
         const div = this.props.div
-        // console.log('DIVISION THIS.PROPS', this.props.div)
         return (
             <div className="division-container">
                 <ul className={`${this.props.confName}-${this.props.divName}`}>{this.props.divName}
